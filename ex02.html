@@ -1,0 +1,31 @@
+<!-- example 02 -->
+<html>
+<script language="JavaScript">
+	function check(){
+		if(myform.age.value < 18){
+			document.writeln("<p><h4><i> You are not eligible </i></h4></p>" + myform.name.value);
+		}else{
+			document.writeln("<h4><i> You are eligible</i></h4>" + myform.name.value);
+		}
+	}
+	function losefocus(){
+		if(myform.name.value == ""){
+			alert("You can not leave the name field blank")
+			myform.name.focus();
+			return false;
+		}
+	}
+</script>
+<body>
+	<form name="myform" onChange="losefocus()">
+		<p><h5><i>Enter name:</i></h5>
+		<input name="name" type="text" size="35" onblur="losefocus()"></p>
+		
+		<p><h5><i>Enter age:</i></h5>
+		<input name="age" type="text" size="5"></p>
+		
+		<input type="button" value="Check" onclick="check()">
+		<input type="reset" value="Clear">
+	</form>
+</body>
+</html>
